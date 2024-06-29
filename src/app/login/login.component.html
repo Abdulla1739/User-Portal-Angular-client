@@ -1,0 +1,24 @@
+<div class="container rounded-5 bg-dark  mt-3">
+    <div class="row align-items-center justify-content-center p-5">
+        <div class="col-lg-6 p-0 mt-3 text-center container-fluid ">
+            <img class="image-fluid" width="75%"
+                src="https://cdni.iconscout.com/illustration/premium/thumb/login-3305943-2757111.png?f=webp"
+                alt="Image">
+        </div>
+        <div class="col-lg-6">
+            <div class="border border-white rounded-5 d-flex flex-column align-items-center w-100 py-5 px-5">
+                <h4 class="text-warning mb-3 ">Login Form</h4>
+                <form (ngSubmit)="login()" #loginForm="ngForm" class="w-100">
+                    <input #userEmail="ngModel" name="email" [(ngModel)]="email" type="text" class="form-control mb-3 rounded-5" placeholder="Email address" email required>
+                    <div *ngIf="userEmail.invalid && userEmail.touched" class="text-danger fw-bolder">                   *Invalid Email
+                    </div>
+                    <input #userpswd ="ngModel" type="password" name="password" [(ngModel)]="password" class="form-control mb-3 rounded-5" placeholder="Password" pattern="[a-zA-z0-9]*" required>
+                    <div *ngIf="userpswd.invalid && userpswd.touched" class="text-danger fw-bolder">                   *Invalid Password
+                    </div>
+                    <button [disabled]="loginForm.invalid" class="btn bg-warning rounded-2 w-100 fw-bold">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
