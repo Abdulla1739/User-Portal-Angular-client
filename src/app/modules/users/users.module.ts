@@ -6,6 +6,11 @@ import { UsersComponent } from './users.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchPipe } from './pipes/search.pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 
 @NgModule({
@@ -13,11 +18,15 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     UsersComponent,
     UsersListComponent,
     AddUserComponent,
-    EditUserComponent
+    EditUserComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgxPaginationModule
   ]
 })
 export class UsersModule { }
