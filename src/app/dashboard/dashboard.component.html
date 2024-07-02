@@ -1,12 +1,38 @@
 <div class="container-fluild">
     <div class="row">
-        <div style="height: 92vh;" class="col-lg-1 bg-dark d-flex flex-column p-3">
+        <div *ngIf="sideBarStatus" style="height: 92vh;" class="col-lg-1 bg-dark d-flex flex-column p-3">
             <a class="mb-3 fw-bolder" style="text-decoration: none; color: white;" routerLink="/dashboard">Home</a>
             <a class="mb-3 fw-bolder" style="text-decoration: none; color: white;" routerLink="/users">User</a>
 
         </div>
         <div class="col">
-            <h1>Welcome Admin</h1>
+            <div class="row mt-2">
+                <div class="col-lg-8">
+                    <div style="height: 140px; background-image: url('https://images.pexels.com/photos/751373/pexels-photo-751373.jpeg?cs=srgb&dl=pexels-namakuki-751373.jpg&fm=jpg'); background-size: cover;"
+                        class="d-flex banner rounded p-3 align-items-center shadow">
+                        <h1><i (click)="menuBtnClicked()" class="fa-solid fa-bars btn text-light fa-1x"></i>
+                            Welcome {{adminName}}</h1>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-lg-6">
+                            <app-calander></app-calander>
+                        </div>
+                        <div class="col-lg-6">
+                            <app-chart></app-chart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div style="height: 370px;" class="rounded p-2 border shadow">
+                        <app-edit-admin></app-edit-admin>
+                    </div>
+                    <div style="height: 130px; background-image: url('https://images.pexels.com/photos/751373/pexels-photo-751373.jpeg?cs=srgb&dl=pexels-namakuki-751373.jpg&fm=jpg'); background-size: cover;"
+                        class="d-flex banner rounded p-3 align-items-center shadow mt-2">
+                        <h5><i class="fa-solid fa-bar btn"></i>
+                            Total Employee Count: <span class="text-light">{{userCount}}</span></h5>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
