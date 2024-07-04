@@ -4,6 +4,8 @@
             <a class="mb-3 fw-bolder" style="text-decoration: none; color: white;" routerLink="/dashboard">Home</a>
             <a class="mb-3 fw-bolder" style="text-decoration: none; color: white;" routerLink="/users">User</a>
 
+            <button (click)="logout()" class="btn text-light mt-auto">Logout</button>
+
         </div>
         <div class="col">
             <div class="row mt-2">
@@ -24,7 +26,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div style="height: 370px;" class="rounded p-2 border shadow">
-                        <app-edit-admin></app-edit-admin>
+                        <app-edit-admin (onAdminChange)="adminChange($event)"></app-edit-admin>
                     </div>
                     <div style="height: 130px; background-image: url('https://images.pexels.com/photos/751373/pexels-photo-751373.jpeg?cs=srgb&dl=pexels-namakuki-751373.jpg&fm=jpg'); background-size: cover;"
                         class="d-flex banner rounded p-3 align-items-center shadow mt-2">
